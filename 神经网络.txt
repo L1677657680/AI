@@ -1,0 +1,58 @@
+神经网络知识点
+机器学习的过程就是收集数据建立一个模型函数的过程，模型建立前期要想收集数据进行训练。
+
+#%% md        表示一个类似HTML的标题头
+### Check missing values        ###表示三级标题
+
+pandas类（pd）：做数据分析      Topi：diabetes = pd.read_csv('D:/input/pima-diabetes/diabetes.csv')   #可读取文件表格的内容
+
+文件名.describe()：显示文件的详细信息，包括样本数、均值、方差等等      
+拓展：文件名.describe(percentiles=[.3,.75,.8])   #percentiles参数改变的是返回值
+
+文件名["列名"].value_counts()：显示文件某列中每种值出现的次数
+
+diabetes.columns：显示diabetes中所有列的标题名
+
+print((diabetes[['列名', '列名']] == 0).sum())求diabetes中所有列的值里面为0的个数
+
+diabetes.loc[:,['Pregnancies']] = diabetes[['Pregnancies']].replace(0, np.NaN)：将diabetes中Pregnancies列的值中为0的值替换为NaN
+
+diabetes.isnull.sum():统计diabetes中所有列的值中为null的个数
+
+print("Mean",np.mean(vector))：打印vector的均值    #Mean：均值
+
+matrix = vector.reshape(10,50)：将一维向量vector转成大小为10*50的二维向量并赋值给maxtrix
+
+
+df = pd.DataFrame({"A": ["foo", "foo", "foo", "foo", "foo", "bar", "bar", "bar", "bar"]})
+df.head(9)                             #数据表的存储并输出，一列表格9个内容
+
+
+table = pivot_table(df, index=['A', 'B'], columns=['C'])          #生成以下表格，行为A、B，列为C
+table       #表格输出
+
+
+frames = [df1, df2, df3]
+result = pd.concat(frames)          #将df1,df2,df3按行拼接到一起，并赋给result
+print(result)         #输出结果
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
